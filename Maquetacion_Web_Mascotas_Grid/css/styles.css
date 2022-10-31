@@ -1,0 +1,101 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+    background-color: rgb(237, 224, 224);
+    font-family:'Poppins', sans-serif;
+}
+
+.contenedor{
+    background-color: #000000;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1124px;/*maximo que se extiende es de 1124*/ 
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* se divide en 3 columnas nuestra pagina*/
+	grid-template-rows: repeat(5, auto); /* se divide en 5 filas nuestra pagina*/
+	grid-gap:  10px;
+	/*Podemos crear cualquier variable */
+	grid-template-areas:"header header header" /* Decimos que el header ocupe las 3 columnas*/
+						"nav nav nav" /* Decimos que el nav ocupe las 3 columnas*/
+						"contenido contenido sidebar" /* Decimos que contenido ocupe 1 y 2columns  y slider la tercera*/
+						"noticia1 noticia2 sidebar" /* Decimos que  noticia 1 ocupe 1 columnas noticia 2 segunda y slider la tercera*/
+						"footer footer footer"; 
+}
+
+.contenedor .cabeceraPrincipal{
+    grid-area: header;
+    background-color: #dfb371;
+    text-align: center;
+    
+
+}
+
+.contenedor .menuPrincipal{
+    grid-area: nav;
+    background-color: #47a799;
+    text-align: center;
+    
+
+}
+
+.contenedor .contenido{
+    grid-area: contenido;
+    background-color: #282C34;
+    color: white;
+    padding: 60px;
+    text-align: center;
+
+}
+
+.contenedor .sidebar{
+    grid-area: sidebar;
+    background-color: #10BBFC;
+    color: white;
+    padding-top: 90px;
+    text-align: center;
+        
+}
+
+.contenedor .noticia1{
+    grid-area: noticia1;
+    background-color: #1c2754;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.contenedor .noticia2{
+    grid-area: noticia2;
+    background-color: #2d3f87;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.contenedor .piePagina{
+    grid-area: footer;
+    background-color: #686f89;
+    color: white;
+    text-align: center;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: red;
+    }
+    .contenedor .sidebar {
+        display: none;
+    }
+    .contenedor{
+        grid-template-areas:"header header header" /* Decimos que el header ocupe las 3 columnas*/
+                            "nav nav nav" /* Decimos que el nav ocupe las 3 columnas*/
+                            "contenido contenido contenido" /* Decimos que contenido ocupe 1 y 2columns  y slider la tercera*/
+                            "noticia1 noticia2 sidebar" /* Decimos que  noticia 1 ocupe 1 columnas noticia 2 segunda y slider la tercera*/
+                            "footer footer footer"; 
+    }
+  
+}
